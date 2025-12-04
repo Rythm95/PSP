@@ -1,0 +1,16 @@
+ El volumen de la unidad C es Windows
+ El n£mero de serie del volumen es: 1CF7-6108
+
+ Directorio de C:\Users\luis_\Desktop\curso 2024-2025\PSP\UT1\UT1.1Programacion_Multiproceso_Java\PMPConsola202 - ProcessBuilder - Redireccionamiento de la Salida
+
+11/10/2024  14:50    <DIR>          .
+02/10/2024  13:33    <DIR>          ..
+02/10/2024  13:30    <DIR>          build
+02/10/2024  13:30             3.777 build.xml
+02/10/2024  13:30                85 manifest.mf
+11/10/2024  14:50    <DIR>          maniobra
+02/10/2024  13:30    <DIR>          nbproject
+02/10/2024  13:30    <DIR>          src
+11/10/2024  14:49    <DIR>          test
+               2 archivos          3.862 bytes
+               7 dirs  898.140.479.488 bytes libres
