@@ -69,6 +69,7 @@ public class Main {
 	}
 
 	private static void cerrarHilos(Equipo eq1, Equipo eq2, Equipo eq3) {
+		System.out.println("Cerrando 1");
 		if (eq1.isAlive()) {
 			if (eq1.getP1().isAlive())
 				eq1.getP1().interrupt();
@@ -78,6 +79,7 @@ public class Main {
 				eq1.getP3().interrupt();
 			eq1.interrupt();
 		}
+		System.out.println("Cerrando 2");
 		if (eq2.isAlive()) {
 			if (eq2.getP1().isAlive())
 				eq2.getP1().interrupt();
@@ -87,6 +89,7 @@ public class Main {
 				eq2.getP3().interrupt();
 			eq2.interrupt();
 		}
+		System.out.println("Cerrando 3");
 		if (eq3.isAlive()) {
 			if (eq3.getP1().isAlive())
 				eq3.getP1().interrupt();

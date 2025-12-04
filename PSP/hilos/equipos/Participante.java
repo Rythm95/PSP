@@ -23,6 +23,7 @@ public class Participante extends Thread {
 	@Override
 	public void run() {
 		while (!fin) {
+			if (Main.isFin()) finalizar();
 			try {
 				spEquipo.acquire();
 				System.out.println(nombre + " del " + equipo.getNombre() + " corre al círculo");
@@ -32,14 +33,17 @@ public class Participante extends Thread {
 				System.out.println(nombre + " del " + equipo.getNombre() + " saca un objeto");
 				List<Boolean> circulo = Main.getCirculo();
 				int objCaja = rn.nextInt(circulo.size());
+				
 				System.out.println(objCaja + " - " + circulo.get(objCaja));
+				
 				if (circulo.get(objCaja) == true) {
 					Main.getCirculo().remove(objCaja);
 					System.out.println(nombre + " del " + equipo.getNombre() + " obtiene objeto especial.");
 					equipo.sumarObjeto();
-					if (equipo.getObjEspe() == 3) {
+					if (equipo.getObjEspe() == 3 && !Main.isFin()) {
 						System.out.println("Ha ganado el " + equipo.getNombre());
 						finalizar();
+						
 					}
 
 				} else {
@@ -50,7 +54,6 @@ public class Participante extends Thread {
 				spEquipo.release();
 
 			} catch (InterruptedException e) {
-				System.out.println(e);
 			}
 		}
 
@@ -60,13 +63,14 @@ public class Participante extends Thread {
 		try {
 			sleep(rn.nextInt(500, 1000));
 		} catch (InterruptedException e) {
-			System.out.println("Tropiezo");
 		}
 	}
 
 	public void finalizar() {
 		if (isAlive()) {
-			System.out.println("Hilo " + nombre + " finalizado.");
+			spCirculo.release();
+			spEquipo.release();
+			System.out.println("Hilo " + nombre + " del " + equipo.getNombre() + " finalizado.");
 			fin = true;
 			Main.setFin(fin);
 			return;

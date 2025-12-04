@@ -98,7 +98,6 @@ public class Equipo extends Thread {
 				p3.join();
 				fin=true;
 			} catch (InterruptedException e) {
-				System.out.println(e);
 			}
 			
 		}while (!fin);
