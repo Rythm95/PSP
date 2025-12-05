@@ -91,16 +91,7 @@ public class Equipo extends Thread {
 		p1.start();
 		p2.start();
 		p3.start();
-		do {
-			try {
-				p1.join();
-				p2.join();
-				p3.join();
-				fin=true;
-			} catch (InterruptedException e) {
-			}
-			
-		}while (!fin);
+		
 		System.out.println("Finalización del hilo "+nombre);
 		return;
 
