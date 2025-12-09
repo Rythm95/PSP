@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="procesos"/>
 	<classpathentry kind="src" path="UT1"/>
 	<classpathentry kind="src" path="UT2"/>
+	<classpathentry kind="src" path="ficheros"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
