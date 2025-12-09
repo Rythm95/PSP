@@ -2,3 +2,16 @@ Val1|2|Val3
 Val1|2|Val3
 Val1|2|Val3
 Val1|2|Val3
+
+CREATE DATABASE circo;
+USE circo;
+
+CREATE TABLE personas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre_usuario VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    nombre_persona VARCHAR(100) NOT NULL,
+    nacionalidad VARCHAR(50) NOT NULL,
+    perfil ENUM('ADMIN','COORDINACION','ARTISTA','INVITADO') NOT NULL
+);
