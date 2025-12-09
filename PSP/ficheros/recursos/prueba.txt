@@ -14,4 +14,6 @@ CREATE TABLE personas (
     nombre_persona VARCHAR(100) NOT NULL,
     nacionalidad VARCHAR(50) NOT NULL,
     perfil ENUM('ADMIN','COORDINACION','ARTISTA','INVITADO') NOT NULL
+    
+    //FOREIGN KEY (id_artista) REFERENCES Artistas(id_artista)
 );
